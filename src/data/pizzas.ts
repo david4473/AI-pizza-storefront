@@ -1,0 +1,170 @@
+import type { Pizza } from "@/types/pizza";
+
+export const pizzas: Pizza[] = [
+  {
+    id: "1",
+    name: "Margherita Supreme",
+    description:
+      "Our signature Margherita with premium buffalo mozzarella, fresh basil, and extra virgin olive oil on a thin, crispy crust.",
+    price: 14.99,
+    image: "/placeholder.svg?height=400&width=600",
+    rating: 4.8,
+    isVegetarian: true,
+    isNew: true,
+    ingredients: [
+      "Buffalo Mozzarella",
+      "Fresh Basil",
+      "San Marzano Tomatoes",
+      "Olive Oil",
+      "Sea Salt",
+    ],
+  },
+  {
+    id: "2",
+    name: "Pepperoni Feast",
+    description:
+      "Double pepperoni and extra cheese on our house-made tomato sauce. A classic favorite with a perfect balance of flavors.",
+    price: 16.99,
+    image: "/placeholder.svg?height=400&width=600",
+    rating: 4.6,
+    ingredients: ["Pepperoni", "Mozzarella", "Tomato Sauce", "Oregano"],
+  },
+  {
+    id: "3",
+    name: "Spicy Diavola",
+    description:
+      "Hot and spicy with Italian salami, chili flakes, spicy nduja spread, and roasted red peppers. Not for the faint-hearted!",
+    price: 17.99,
+    image: "/placeholder.svg?height=400&width=600",
+    rating: 4.7,
+    isSpicy: true,
+    ingredients: [
+      "Spicy Salami",
+      "Nduja",
+      "Chili Flakes",
+      "Red Peppers",
+      "Mozzarella",
+    ],
+  },
+  {
+    id: "4",
+    name: "Quattro Formaggi",
+    description:
+      "A cheese lover's dream featuring four premium Italian cheeses: mozzarella, gorgonzola, fontina, and parmigiano-reggiano.",
+    price: 18.99,
+    image: "/placeholder.svg?height=400&width=600",
+    rating: 4.5,
+    isVegetarian: true,
+    ingredients: [
+      "Mozzarella",
+      "Gorgonzola",
+      "Fontina",
+      "Parmigiano-Reggiano",
+      "Thyme",
+    ],
+  },
+  {
+    id: "5",
+    name: "Vegan Garden Delight",
+    description:
+      "Plant-based pizza with dairy-free cheese, roasted vegetables, and our special herb-infused olive oil drizzle.",
+    price: 17.99,
+    image: "/placeholder.svg?height=400&width=600",
+    rating: 4.3,
+    isVegetarian: true,
+    ingredients: [
+      "Vegan Cheese",
+      "Bell Peppers",
+      "Zucchini",
+      "Mushrooms",
+      "Red Onion",
+      "Herb Oil",
+    ],
+  },
+  {
+    id: "6",
+    name: "BBQ Chicken",
+    description:
+      "Tangy BBQ sauce, grilled chicken, red onions, and cilantro, topped with a blend of mozzarella and gouda cheese.",
+    price: 18.99,
+    image: "/placeholder.svg?height=400&width=600",
+    rating: 4.7,
+    ingredients: [
+      "Grilled Chicken",
+      "BBQ Sauce",
+      "Red Onion",
+      "Cilantro",
+      "Gouda",
+      "Mozzarella",
+    ],
+  },
+  {
+    id: "7",
+    name: "Truffle Mushroom",
+    description:
+      "Gourmet pizza with wild mushrooms, truffle oil, caramelized onions, and fontina cheese on a garlic-infused crust.",
+    price: 21.99,
+    image: "/placeholder.svg?height=400&width=600",
+    rating: 4.9,
+    isVegetarian: true,
+    isNew: true,
+    ingredients: [
+      "Wild Mushrooms",
+      "Truffle Oil",
+      "Fontina",
+      "Caramelized Onions",
+      "Garlic",
+    ],
+  },
+  {
+    id: "8",
+    name: "Mediterranean",
+    description:
+      "A taste of the Mediterranean with olives, feta cheese, sun-dried tomatoes, artichoke hearts, and fresh oregano.",
+    price: 19.99,
+    image: "/placeholder.svg?height=400&width=600",
+    rating: 4.6,
+    isVegetarian: true,
+    ingredients: [
+      "Feta",
+      "Kalamata Olives",
+      "Sun-dried Tomatoes",
+      "Artichoke Hearts",
+      "Oregano",
+    ],
+  },
+  {
+    id: "9",
+    name: "Meat Lovers",
+    description:
+      "Loaded with pepperoni, Italian sausage, bacon, ham, and ground beef for the ultimate carnivore experience.",
+    price: 20.99,
+    image: "/placeholder.svg?height=400&width=600",
+    rating: 4.8,
+    ingredients: [
+      "Pepperoni",
+      "Italian Sausage",
+      "Bacon",
+      "Ham",
+      "Ground Beef",
+      "Mozzarella",
+    ],
+  },
+  {
+    id: "10",
+    name: "Hawaiian Twist",
+    description:
+      "Our gourmet take on Hawaiian pizza with smoked ham, caramelized pineapple, jalapeños, and a honey drizzle.",
+    price: 17.99,
+    image: "/placeholder.svg?height=400&width=600",
+    rating: 4.4,
+    isSpicy: true,
+    ingredients: [
+      "Smoked Ham",
+      "Caramelized Pineapple",
+      "Jalapeños",
+      "Mozzarella",
+      "Honey Drizzle",
+    ],
+  },
+];
