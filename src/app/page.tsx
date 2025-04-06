@@ -2,7 +2,6 @@ import Header from "@/components/header";
 import HeroSection from "@/components/hero-section";
 import PizzaCard from "@/components/pizza-card";
 import { pizzas } from "@/data/pizzas";
-import Pizza from "@types/pizza";
 
 export default function Home() {
   return (

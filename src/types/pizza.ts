@@ -10,3 +10,7 @@ export interface Pizza {
   isNew?: boolean;
   ingredients?: string[];
 }
+
+export interface Pizza {
+  message: string;
+}
