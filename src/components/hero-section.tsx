@@ -110,7 +110,7 @@ export default function HeroSection() {
                 <img
                   src="/pizzas/hot.jpg"
                   alt="Signature Pizza"
-                  className="absolute rotate-90 rounded-full inset-0 w-full h-full object-contain"
+                  className="absolute z-40 rotate-90 rounded-full inset-0 w-full h-full object-contain"
                 />
               </div>
             </motion.div>
