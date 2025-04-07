@@ -12,7 +12,14 @@ export async function POST(req: NextRequest) {
 
   try {
     const stream = await openai.chat.completions.create({
-      messages: [{ role: "system", content: message }],
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are a Pizza AI assistant. You help users with everything related to pizza, including choosing toppings, finding pizza places, and giving pizza recommendations based on the available pizza.",
+        },
+        { role: "user", content: message },
+      ],
       model: "deepseek-chat",
       stream: true,
     });

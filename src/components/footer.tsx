@@ -5,9 +5,7 @@ export default function Footer() {
     <footer className="bg-amber-50 px-4 py-8 w-full border-t border-amber-100">
       <div className="container mx-auto max-w-4xl">
         <div className="mb-6">
-          <h2 className="text-2xl font-medium mb-2 text-amber-900">
-            PIZZA PERFECTION
-          </h2>
+          <h2 className="text-2xl font-medium mb-2 text-amber-900">Pizzaria</h2>
           <p className="text-amber-800 max-w-2xl">
             Serving the most delicious handcrafted pizzas in town since 2010.
             Made with fresh ingredients and baked to perfection in our
@@ -56,7 +54,7 @@ export default function Footer() {
 
         <div className="border-t border-amber-200 pt-4">
           <div className="text-sm text-amber-700 flex justify-between items-center">
-            <div>© 2025 Pizza Perfection. All rights reserved.</div>
+            <div>© 2025 Pizzaria. All rights reserved.</div>
             <div className="flex gap-4">
               <Link href="/privacy" className="hover:underline">
                 Privacy

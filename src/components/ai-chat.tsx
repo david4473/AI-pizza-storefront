@@ -2,7 +2,8 @@
 
 import { Bot, X, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import ReactMarkdown from "react-markdown";
 
 export default function AIChat({ onClose }: { onClose: () => void }) {
   const [query, setQuery] = useState("");
@@ -12,18 +13,30 @@ export default function AIChat({ onClose }: { onClose: () => void }) {
     {
       type: "ai",
       message:
-        "Hi there! I'm Pizza Perfection's AI assistant. Ask me anything about our menu, ingredients, or special offers!",
+        "Hi there! I'm Pizzaria's AI assistant. Ask me anything about our menu, ingredients, or special offers!",
     },
   ]);
+
   const [isLoading, setIsLoading] = useState(false);
+  const messageContainerRef = useRef<null | HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (messageContainerRef.current) {
+      messageContainerRef.current.scrollTop =
+        messageContainerRef.current.scrollHeight;
+    }
+  }, [conversation]);
 
   const handleSend = async () => {
     if (!query.trim()) return;
 
-    const currentQuery = query; 
+    const currentQuery = query;
     setQuery("");
 
-    setConversation((prev) => [...prev, { type: "user", message: currentQuery }]);
+    setConversation((prev) => [
+      ...prev,
+      { type: "user", message: currentQuery },
+    ]);
     setIsLoading(true);
 
     const res = await fetch("/api/ai-agent", {
@@ -68,7 +81,9 @@ export default function AIChat({ onClose }: { onClose: () => void }) {
         <div className="p-4 border-b flex items-center justify-between bg-amber-50 rounded-t-lg">
           <div className="flex items-center gap-2">
             <Bot className="text-amber-600" size={20} />
-            <h3 className="font-medium text-amber-900">Pizza AI Assistant</h3>
+            <h3 className="font-medium text-amber-900">
+              Pizzaria AI Assistant
+            </h3>
           </div>
           <button
             onClick={onClose}
@@ -79,7 +94,10 @@ export default function AIChat({ onClose }: { onClose: () => void }) {
         </div>
 
         {/* Conversation */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div
+          ref={messageContainerRef}
+          className="flex-1 overflow-y-auto p-4 space-y-4"
+        >
           {conversation.map((item, index) => (
             <div
               key={index}
@@ -91,10 +109,10 @@ export default function AIChat({ onClose }: { onClose: () => void }) {
                 className={`max-w-[80%] p-3 rounded-lg ${
                   item.type === "user"
                     ? "bg-amber-600 text-white rounded-tr-none"
-                    : "bg-gray-100 text-gray-800 rounded-tl-none"
+                    : "bg-[#d8d8d8] text-gray-800 rounded-tl-none"
                 }`}
               >
-                {item.message}
+                <ReactMarkdown>{item.message}</ReactMarkdown>
               </div>
             </div>
           ))}

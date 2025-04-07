@@ -1,13 +1,30 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, Bot } from "lucide-react";
+import { Phone, Bot, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useCart } from "@/context/cart-context";
 import AIChat from "./ai-chat";
 
 export default function Header() {
   const [showAIChat, setShowAIChat] = useState(false);
+  const { toggleCart, totalItems } = useCart();
+
+  useEffect(() => {
+    if (showAIChat) {
+      // Disable background scrolling when modal is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Re-enable scrolling when modal is closed
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup when component is unmounted or modal is closed
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showAIChat]);
 
   return (
     <>
@@ -21,7 +38,7 @@ export default function Header() {
                   <span className="text-white font-bold text-xl">P</span>
                 </div>
                 <span className="text-xl font-medium text-amber-900">
-                  PIZZA PERFECTION
+                  PIZZARIA
                 </span>
               </Link>
             </div>
@@ -48,6 +65,20 @@ export default function Header() {
                 <Phone size={18} />
                 <span className="font-medium">555-123-4567</span>
               </div>
+
+              {/* Cart Button */}
+              <button
+                onClick={toggleCart}
+                className="relative p-2 text-amber-900 hover:text-amber-600"
+              >
+                <ShoppingCart size={22} />
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-amber-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {totalItems}
+                  </span>
+                )}
+              </button>
+
               <Button
                 className="bg-amber-600 hover:bg-amber-700 text-white flex items-center gap-2"
                 onClick={() => setShowAIChat(true)}
@@ -61,7 +92,9 @@ export default function Header() {
       </header>
 
       {/* AI Chat Popup */}
-      {showAIChat && <AIChat onClose={() => setShowAIChat(false)} />}
+      <div className={`${showAIChat ? "visible" : "invisible"}`}>
+        <AIChat onClose={() => setShowAIChat(false)} />
+      </div>
     </>
   );
 }

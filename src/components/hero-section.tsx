@@ -71,11 +71,10 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right Column - Pizza Showcase */}
           <div className="relative h-64 md:h-auto">
             {/* Special Offer Card */}
             <motion.div
-              className="bg-white text-amber-900 p-5 rounded-lg shadow-lg absolute right-0 top-1/2 transform -translate-y-1/2 max-w-xs"
+              className="bg-white z-10 text-amber-900 p-5 rounded-lg shadow-lg absolute right-0 top-1/2 transform -translate-y-1/2 max-w-xs"
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : 100 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -109,9 +108,9 @@ export default function HeroSection() {
               <div className="relative w-full h-full">
                 <div className="absolute inset-0 rounded-full bg-amber-600/20 animate-pulse" />
                 <img
-                  src="/placeholder.svg?height=400&width=400"
+                  src="/pizzas/hot.jpg"
                   alt="Signature Pizza"
-                  className="absolute inset-0 w-full h-full object-contain"
+                  className="absolute rotate-90 rounded-full inset-0 w-full h-full object-contain"
                 />
               </div>
             </motion.div>

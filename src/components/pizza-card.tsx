@@ -4,22 +4,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PlusCircle, Star, Info } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-
-interface PizzaCardProps {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-  rating?: number;
-  isVegetarian?: boolean;
-  isSpicy?: boolean;
-  isNew?: boolean;
-  ingredients?: string[];
-  onAddToCart?: (id: string) => void;
-}
-
-const onAddToCart = (id: string) => console.log(`Added pizza ${id} to cart`);
+import { PizzaCardProps } from "@/types/index";
+import { useCart } from "@/context/cart-context";
 
 export default function PizzaCard({
   id,
@@ -33,6 +19,23 @@ export default function PizzaCard({
   isNew = false,
   ingredients = [],
 }: PizzaCardProps) {
+  const { addItem } = useCart();
+
+  const onAddToCart = (id: string) => {
+    addItem({
+      id,
+      name,
+      description,
+      price,
+      image,
+      rating,
+      isVegetarian,
+      isSpicy,
+      isNew,
+      ingredients,
+    });
+  };
+
   return (
     <div className="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 flex flex-col h-full border border-amber-100">
       {/* Pizza Image */}

@@ -1,4 +1,4 @@
-import type { Pizza } from "@/types/pizza";
+import type { Pizza } from "@/types";
 
 export const pizzas: Pizza[] = [
   {
@@ -7,7 +7,7 @@ export const pizzas: Pizza[] = [
     description:
       "Our signature Margherita with premium buffalo mozzarella, fresh basil, and extra virgin olive oil on a thin, crispy crust.",
     price: 14.99,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/pizzas/Margherita_Supreme.jpg",
     rating: 4.8,
     isVegetarian: true,
     isNew: true,
@@ -25,7 +25,7 @@ export const pizzas: Pizza[] = [
     description:
       "Double pepperoni and extra cheese on our house-made tomato sauce. A classic favorite with a perfect balance of flavors.",
     price: 16.99,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/pizzas/Pepperoni_Feast.jpg",
     rating: 4.6,
     ingredients: ["Pepperoni", "Mozzarella", "Tomato Sauce", "Oregano"],
   },
@@ -35,7 +35,7 @@ export const pizzas: Pizza[] = [
     description:
       "Hot and spicy with Italian salami, chili flakes, spicy nduja spread, and roasted red peppers. Not for the faint-hearted!",
     price: 17.99,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/pizzas/Spicy_Diavola.jpg",
     rating: 4.7,
     isSpicy: true,
     ingredients: [
@@ -52,7 +52,7 @@ export const pizzas: Pizza[] = [
     description:
       "A cheese lover's dream featuring four premium Italian cheeses: mozzarella, gorgonzola, fontina, and parmigiano-reggiano.",
     price: 18.99,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/pizzas/Quattro_Formaggi.jpg",
     rating: 4.5,
     isVegetarian: true,
     ingredients: [
@@ -69,7 +69,7 @@ export const pizzas: Pizza[] = [
     description:
       "Plant-based pizza with dairy-free cheese, roasted vegetables, and our special herb-infused olive oil drizzle.",
     price: 17.99,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/pizzas/Vegan_Garden_Delight.jpg",
     rating: 4.3,
     isVegetarian: true,
     ingredients: [
@@ -87,7 +87,7 @@ export const pizzas: Pizza[] = [
     description:
       "Tangy BBQ sauce, grilled chicken, red onions, and cilantro, topped with a blend of mozzarella and gouda cheese.",
     price: 18.99,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/pizzas/BBQ_Chicken.jpg",
     rating: 4.7,
     ingredients: [
       "Grilled Chicken",
@@ -104,7 +104,7 @@ export const pizzas: Pizza[] = [
     description:
       "Gourmet pizza with wild mushrooms, truffle oil, caramelized onions, and fontina cheese on a garlic-infused crust.",
     price: 21.99,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/pizzas/Truffle_Mushroom.jpg",
     rating: 4.9,
     isVegetarian: true,
     isNew: true,
@@ -122,7 +122,7 @@ export const pizzas: Pizza[] = [
     description:
       "A taste of the Mediterranean with olives, feta cheese, sun-dried tomatoes, artichoke hearts, and fresh oregano.",
     price: 19.99,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/pizzas/Mediterranean.jpg",
     rating: 4.6,
     isVegetarian: true,
     ingredients: [
@@ -139,7 +139,7 @@ export const pizzas: Pizza[] = [
     description:
       "Loaded with pepperoni, Italian sausage, bacon, ham, and ground beef for the ultimate carnivore experience.",
     price: 20.99,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/pizzas/Meat_Lovers.jpg",
     rating: 4.8,
     ingredients: [
       "Pepperoni",
@@ -156,7 +156,7 @@ export const pizzas: Pizza[] = [
     description:
       "Our gourmet take on Hawaiian pizza with smoked ham, caramelized pineapple, jalapeños, and a honey drizzle.",
     price: 17.99,
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/pizzas/Hawaiian_Twist.jpg",
     rating: 4.4,
     isSpicy: true,
     ingredients: [

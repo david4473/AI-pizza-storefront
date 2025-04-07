@@ -1,12 +1,17 @@
-import Header from "@/components/header";
 import HeroSection from "@/components/hero-section";
 import PizzaCard from "@/components/pizza-card";
-import { pizzas } from "@/data/pizzas";
+import { headers } from "next/headers";
+import type { Pizza } from "@/types";
 
-export default function Home() {
+export default async function Home() {
+  const header = await headers();
+  const host = header.get("host");
+
+  const response = await fetch(`http://${host}/api/pizzas`);
+  const pizzas: Pizza[] = await response.json();
+
   return (
     <>
-      <Header />
       <main className="container mx-auto max-w-4xl px-4 py-8">
         <HeroSection />
 
