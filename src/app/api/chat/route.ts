@@ -1,7 +1,10 @@
 import { NextRequest } from "next/server";
-import OpenAI from "openai";
 
-const openai = new OpenAI({
+import { streamText } from "ai";
+import { deepseek } from "@ai-sdk/deepseek";
+import getTools from "@/utils/ai-tools";
+
+/* const openai = new OpenAI({
   baseURL: "https://api.deepseek.com",
   apiKey: process.env.AI_API_KEY,
 });
@@ -47,4 +50,26 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.log("Chat error: " + error);
   }
+}
+ */
+
+const model = deepseek("deepseek-chat");
+
+const { pizzariaTool } = await getTools();
+
+export async function POST(req: NextRequest) {
+  const { messages } = await req.json();
+
+  const result = streamText({
+    model,
+    system: process.env.AI_SYSTEM_COMMAND,
+    messages,
+    tools: {
+      pizzaria: pizzariaTool,
+    },
+  });
+
+  return result.toDataStreamResponse({
+    sendReasoning: true,
+  });
 }
